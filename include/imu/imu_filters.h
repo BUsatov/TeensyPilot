@@ -3,8 +3,8 @@
 #include <stdint.h>
 
 // Low-pass filter config (Hz). Set to 0 to disable.
-#define IMU_LPF_GYRO_HZ 100.0f
-#define IMU_LPF_ACCEL_HZ 40.0f
+#define IMU_LPF_GYRO_HZ 40.0f
+#define IMU_LPF_ACCEL_HZ 10.0f
 
 // Throttle range used for notch scaling.
 #define IMU_NOTCH_THROTTLE_MIN_US 1000.0f
@@ -17,8 +17,8 @@
 #define IMU_NOTCH1_ACCEL_HZ 0.0f
 #define IMU_NOTCH1_ACCEL_Q  0.0f
 // Band 2
-#define IMU_NOTCH2_GYRO_HZ 22.0f
-#define IMU_NOTCH2_GYRO_Q  6.0f
+#define IMU_NOTCH2_GYRO_HZ 0.0f
+#define IMU_NOTCH2_GYRO_Q  0.0f
 #define IMU_NOTCH2_ACCEL_HZ 0.0f
 #define IMU_NOTCH2_ACCEL_Q  0.0f
 // Band 3
