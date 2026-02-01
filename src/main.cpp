@@ -23,15 +23,15 @@
 
 namespace {
 struct App {
-  static constexpr uint8_t kMotorPins[EscPwm::kMotorCount] = {1, 2, 3, 4};
-  static constexpr uint32_t kImuPeriodUs = 1000;    // 1 kHz
+  static constexpr uint8_t kMotorPins[EscPwm::kMotorCount] = {2, 3, 4, 1};
+  static constexpr uint32_t kImuPeriodUs = 4000;    // 250 Hz
   static constexpr uint32_t kControlPeriodUs = 4000; // 250 Hz
-  static constexpr uint32_t kLogPeriodUs = 4000;   // 50 Hz
+  static constexpr uint32_t kLogPeriodUs = 4000;   // 250 Hz
 
   Mpu6050Driver imu{0x68};
-  ComplementaryEstimator estimator{0.98f};
+  ComplementaryEstimator estimator{0.8f};
   MadgwickEstimator madgwick{0.1f};
-  StateEstimator *state_estimator = &estimator; // default: complementary
+  StateEstimator *state_estimator = &madgwick; // default: complementary
   SerialLogger logger{Serial};
   uint32_t last_us = 0;
   CRSFforArduino crsf{&Serial2};

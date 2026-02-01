@@ -15,13 +15,14 @@ public:
 
 private:
   static constexpr uint8_t kRegPwrMgmt1 = 0x6B;
+  static constexpr uint8_t kRegSmplrtDiv = 0x19;
   static constexpr uint8_t kRegConfig = 0x1A;
   static constexpr uint8_t kRegGyroConfig = 0x1B;
   static constexpr uint8_t kRegAccelConfig = 0x1C;
   static constexpr uint8_t kRegAccelXoutH = 0x3B;
 
-  static constexpr float kAccLsbPerG = 16384.0f;
-  static constexpr float kGyroLsbPerDps = 131.0f;
+  static constexpr float kAccLsbPerG = 4096.0f;
+  static constexpr float kGyroLsbPerDps = 65.5f;
 
   uint8_t addr_;
   int16_t ax_bias_;

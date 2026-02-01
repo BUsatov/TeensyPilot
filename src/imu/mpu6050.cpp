@@ -43,9 +43,10 @@ bool Mpu6050Driver::begin() {
   writeReg(kRegPwrMgmt1, 0x00);
   delay(100);
 
-  writeReg(kRegConfig, 0x05);       // DLPF_CFG=3 (~44 Hz gyro/accel)
-  writeReg(kRegGyroConfig, 0x8);   // ±250 dps
-  writeReg(kRegAccelConfig, 0x43);  // ±2 g
+  writeReg(kRegConfig, 0x05);        // DLPF_CFG=3 (~44 Hz gyro/accel)
+  writeReg(kRegSmplrtDiv, 0x03);     // 1 kHz / (1 + 3) = 250 Hz
+  writeReg(kRegGyroConfig, 0x8);     // ±250 dps
+  writeReg(kRegAccelConfig, 0x43);   // ±2 g
 
   return true;
 }
