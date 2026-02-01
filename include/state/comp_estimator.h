@@ -1,7 +1,7 @@
 #pragma once
 
 #include "state/state_estimator.h"
-#include "imu/comp_filter.h"
+#include "state/comp_filter.h"
 
 class ComplementaryEstimator final : public StateEstimator {
 public:

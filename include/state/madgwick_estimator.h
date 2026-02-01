@@ -1,7 +1,7 @@
 #pragma once
 
 #include "state/state_estimator.h"
-#include "imu/madgwick_filter.h"
+#include "state/madgwick_filter.h"
 
 class MadgwickEstimator final : public StateEstimator {
 public:
